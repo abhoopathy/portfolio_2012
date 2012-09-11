@@ -72,6 +72,13 @@ a:visited:hover,
 a:hover:hover {
   color: #156778;
 }
+a.active,
+a:visited.active,
+a:hover.active {
+  color: #4f4f4f;
+  text-decoration: none;
+  cursor: default;
+}
 h1 {
   font-weight: bold;
   font-size: 1.3em;

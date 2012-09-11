@@ -2,6 +2,7 @@
 @import "grid.less";
 @import "reset.less";
 
+@text_color: #4f4f4f;
 @main_blue: #25b1ce;
 //@total-width: 700px;
 
@@ -12,6 +13,11 @@ a, a:visited, a:hover {
     text-decoration: none;
     &:hover {
         color: darken(@main_blue, 20%);
+    }
+    &.active {
+        color: @text_color;
+        text-decoration: none;
+        cursor: default;
     }
 }
 h1 {
@@ -28,7 +34,7 @@ h3 {
 body {
     font-size: 12px;
     font-family: Georgia;
-    color: #4f4f4f;
+    color: @text_color;
     background-color: lighten(#d4edeb,10%);
 }
 .border_top {

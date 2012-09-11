@@ -11,7 +11,20 @@ define [
 
         el: $('#sidebar')
 
+        make_active: (tag_name) ->
+            this.render()
+            $a = this.$el.find("a")
+            $a.removeClass('active')
+            # find link of active page, add .active class
+            $a = this.$el.find("a[href='#proj/#{tag_name}']")
+            $a.addClass('active')
+
+        rendered: false
+
         render: ->
-            this.$el.html( SidebarTemplate(Data) )
+            # if this is already rendered, don't rerender
+            if !this.rendered
+                this.$el.html( SidebarTemplate(Data) )
+                this.rendered = true
 
     return new SidebarView

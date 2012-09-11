@@ -2,25 +2,25 @@ define [
     'jquery',
     'underscore',
     'backbone',
-    'cs!data',
 
     'cs!views/sidebar'
     'cs!views/main'
 
-], ($, _, Backbone, Data, SidebarView, MainView) ->
+], ($, _, Backbone, SidebarView, MainView) ->
 
     AppRouter = Backbone.Router.extend
         self: this
 
         routes:
-            'home': 'home'
             'proj/:tag_name': 'show_project'
             'branding': 'show_branding_page'
+            '': 'home'
 
         home: ->
-            console.log 'home'
+            this.show_project('venmoHomepage')
 
         show_project: (tag_name) ->
+            SidebarView.make_active(tag_name)
             MainView.render(tag_name)
 
         show_branding_page: () ->
