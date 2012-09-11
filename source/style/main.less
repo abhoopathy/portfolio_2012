@@ -1,0 +1,161 @@
+@import "elements.less";
+@import "grid.less";
+@import "reset.less";
+
+@main_blue: #25b1ce;
+//@total-width: 700px;
+
+@line-color: lighten(#4f4f4f, 30%);
+
+a, a:visited, a:hover {
+    color: @main_blue;
+    text-decoration: none;
+    &:hover {
+        color: darken(@main_blue, 20%);
+    }
+}
+h1 {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+h2 {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+h3 {
+    font-size: 1.1em;
+}
+body {
+    font-size: 12px;
+    font-family: Georgia;
+    color: #4f4f4f;
+    background-color: lighten(#d4edeb,10%);
+}
+.border_top {
+    border-top: 1px dotted @line-color;
+}
+
+.body_wrapper {
+    width: @total-width;
+    margin: 50px auto;
+
+    .header_logo {
+        background-image: url('images/logo.png');
+        width: 79px;
+        height: 56px;
+        float: left;
+    }
+
+    .header_text {
+        float: left;
+        margin: 15px 0 0 15px;
+    }
+
+    #header {
+      .column(9);
+      .push(3);
+      margin-bottom: 50px;
+    }
+
+    #main_container {
+      .column(9);
+      .border_top;
+      padding-top: 10px;
+    }
+
+    #sidebar {
+      .column(2);
+      .push(1);
+      .border_top;
+      padding-top: 10px;
+      text-align: left;
+      h2 {
+          margin-bottom: 10px;
+      }
+      ul.links {
+          li {
+              font-size: 1.1em;
+              margin-bottom: 5px;
+          }
+      }
+    }
+
+}
+
+.main_page {
+    p {
+        width: 80%;
+    }
+    p.caption {
+        margin: 0 0 30px 0;
+    }
+    img {
+        max-width: 100%;
+        margin-top: 10px;
+    }
+}
+
+
+/* Custom buttons -------------------------------------------------------------------*/
+
+.button (light_text, @basecolor: #5291CB, @corner-radius: 3px) {
+  cursor: pointer;
+  color: white;
+  text-shadow: 0em -0.1em darken(@basecolor, 20%);
+
+  background-color: @basecolor;
+  border: 1px solid darken(@basecolor, 15%);
+  .gradient( @basecolor, darken(@basecolor, 5%), lighten(@basecolor, 5%));
+  padding: 10px;
+  .rounded(@corner-radius);
+  box-shadow: lighten(@basecolor, 20%) 0 1px 1px inset;
+
+  &:active {
+    .gradient( @basecolor, @basecolor, darken(@basecolor, 10%));
+    box-shadow: darken(@basecolor, 20%) 0 1px 0 inset;
+    color: white;
+    text-shadow: 0em 0.1em darken(@basecolor, 20%);
+  }
+
+}
+
+
+
+/* --ELEMENTs MIXINS --------------------------------------------------------------------------------
+
+    .gradient( @color: #F5F5F5, @start: #EEE, @stop: #FFF )
+    .bw-gradient( @color: #F5F5F5, @start: 0, @stop: 255 )
+    .bordered( @top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE )
+    .drop-shadow( @x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1 )
+    .rounded( @radius: 2px )
+    .border-radius( @topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0 )
+    .opacity( @opacity: 0.5 )
+    .transition-duration( @duration: 0.2s )
+    .rotation( @deg:5deg ){
+    .scale( @ratio:1.5 ){
+    .transition( @duration:0.2s, @ease:ease-out )
+    .inner-shadow( @horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4 )
+    .box-shadow( @arguments )
+    .columns( @colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid,
+      @columnRuleWidth: 1px )
+    .translate( @x:0, @y:0 )
+
+
+-----GRID MIXINS ------------------------------------------------------------------------------------
+
+  Set these variables (defaults below, 12 col 960px grid)
+  @column-width: 60;
+  @gutter-width: 20;
+  @columns: 12;
+
+  If you want a fluid grid
+  @total-width: 100%;
+
+  Mixins
+  .column(3);
+  .row(9)
+    .column(3,9);
+  .push(2);
+  .pull(2);
+
+*/
