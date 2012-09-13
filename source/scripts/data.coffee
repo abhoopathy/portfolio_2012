@@ -3,6 +3,7 @@ define [
     'jade!projects/venmoHomepage/template',
     'jade!projects/rockYourJersey/template',
     'jade!projects/SPAViz/template'
+    'jade!projects/amnesty/template'
     #'jade!templates/projects/amnesty_cmu'
     #'jade!templates/projects/college_peer_visualization'
     #'jade!templates/projects/giant_eagle'
@@ -15,6 +16,7 @@ define [
     VenmoHomepageTemplate,
     RockYourJerseyTemplate
     SPAVizTemplate
+    AmnestyTemplate
    ) ->
 
     Projects =
@@ -37,6 +39,11 @@ define [
             template: SPAVizTemplate
             year: '2010'
             skills: ['MySQL', 'PHP', 'JavaScript', 'jQuery']
+
+        'amnesty':
+            name: 'Amnesty CMU'
+            template: AmnestyTemplate
+            year: '2010'
 
             #'amnesty_cmu':
             #    'Amnesty CMU'

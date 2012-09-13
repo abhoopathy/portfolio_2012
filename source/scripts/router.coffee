@@ -22,9 +22,16 @@ define [
         show_project: (tag_name) ->
             SidebarView.make_active(tag_name)
             MainView.render(tag_name)
+            this.analytics()
 
         show_branding_page: () ->
             MainView.render('branding')
+            this.analytics()
+
+        analytics: () ->
+            url = Backbone.history.getFragment()
+            _gaq.push(['_trackPageview', "/#{url}"])
+
 
     returnable =
 

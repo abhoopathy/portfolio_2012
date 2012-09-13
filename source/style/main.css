@@ -13,6 +13,7 @@
 body {
   width: 100%;
   *zoom: 1;
+  clear: both;
 }
 body:before,
 body:after {
@@ -79,6 +80,9 @@ a:hover.active {
   text-decoration: none;
   cursor: default;
 }
+.clearfix {
+  clear: both;
+}
 h1 {
   font-weight: bold;
   font-size: 1.3em;
@@ -89,6 +93,9 @@ h2 {
 }
 h3 {
   font-size: 1.1em;
+}
+html {
+  overflow-y: scroll;
 }
 body {
   font-size: 12px;
@@ -113,13 +120,17 @@ body {
   float: left;
   margin: 15px 0 0 15px;
 }
+.body_wrapper .header_right {
+  float: right;
+  margin: 3px 20px 0 0;
+}
 .body_wrapper #header {
   display: inline;
   float: left;
   width: 700px;
   margin: 0 10px;
   margin-left: 250px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 .body_wrapper #main_container {
   display: inline;
@@ -128,6 +139,7 @@ body {
   margin: 0 10px;
   border-top: 1px dotted #9c9c9c;
   padding-top: 10px;
+  margin-bottom: 100px;
 }
 .body_wrapper #sidebar {
   display: inline;
@@ -142,7 +154,7 @@ body {
 .body_wrapper #sidebar h2 {
   margin-bottom: 10px;
 }
-.body_wrapper #sidebar ul.links li {
+.body_wrapper ul.links li {
   font-size: 1.1em;
   margin-bottom: 5px;
 }
@@ -154,7 +166,21 @@ body {
 }
 .main_page img {
   max-width: 100%;
-  margin-top: 10px;
+  margin-top: 20px;
+}
+.main_page img.drib.single {
+  width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main_page img.triplet {
+  max-width: 33%;
+  float: left;
+}
+.main_page img.twin {
+  max-width: 50%;
+  float: left;
 }
 /* Custom buttons -------------------------------------------------------------------*/
 /* --ELEMENTs MIXINS --------------------------------------------------------------------------------
