@@ -20,11 +20,12 @@ define [
             this.show_project('venmoHomepage')
 
         show_project: (tag_name) ->
-            SidebarView.make_active(tag_name)
+            SidebarView.make_active("#proj/#{tag_name}")
             MainView.render(tag_name)
             this.analytics()
 
         show_branding_page: () ->
+            SidebarView.make_active('#branding')
             MainView.render('branding')
             this.analytics()
 

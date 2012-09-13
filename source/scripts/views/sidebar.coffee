@@ -11,12 +11,12 @@ define [
 
         el: $('#sidebar')
 
-        make_active: (tag_name) ->
+        make_active: (link_href) ->
             this.render()
             $a = this.$el.find("a")
             $a.removeClass('active')
             # find link of active page, add .active class
-            $a = this.$el.find("a[href='#proj/#{tag_name}']")
+            $a = this.$el.find("a[href='#{link_href}']")
             $a.addClass('active')
 
         rendered: false

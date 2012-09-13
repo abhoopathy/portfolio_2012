@@ -35,7 +35,7 @@ define [
                      'Branding',
                      'JavaScript', 'CreativeSuite Scripting' ]
         'SPAViz':
-            name: 'Strucutral Path Analysis'
+            name: 'Structural Path Analysis'
             template: SPAVizTemplate
             year: '2010'
             skills: ['MySQL', 'PHP', 'JavaScript', 'jQuery']
